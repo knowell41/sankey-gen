@@ -1,0 +1,1 @@
+[{"source": "Salary", "target": "income", "value": 100000, "node_label": "none"}, {"source": "income", "target": "excess funds", "value": 100000, "node_label": "excess funds"}, {"source": "excess funds", "target": "none", "value": 0, "node_label": "none"}]
