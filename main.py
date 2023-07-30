@@ -17,13 +17,6 @@ heading = """
 print(heading)
 print("Visualize your Cashflow!!")
 
-mapping = {
-    "1": "income",
-    "2": "expenses",
-    "3": "savings",
-    "4": "bank",
-    "5": "bank transaction",
-}
 
 
 def get_input():
@@ -33,8 +26,8 @@ def get_input():
 
 
 def get_bank_transaction_detail():
-    bank_name = input(f"Name of bank source: ")
-    destination = input(f"Transaction name: ")
+    bank_name = input(f"Name of source: ")
+    destination = input(f"Name of the: ")
     amount = input(f"Amount: ")
     return bank_name, destination, amount
 
@@ -46,7 +39,7 @@ while True:
         "[2] Add expenses\n"
         "[3] Add savings\n"
         "[4] Add banks\n"
-        "[5] Add bank transaction\n"
+        "[5] Add transaction\n"
         "[9] Work with existing output\n"
         "[0] Vizualize Cashflow\n\n"
         "Enter your choice: "

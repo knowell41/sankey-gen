@@ -17,24 +17,29 @@ class GenerateDataset:
         pass
 
     def move_funds_from_bank(self, bank_name, transaction_name, value):
+        bank_name = bank_name.strip().lower()
+        transaction_name = transaction_name.strip().lower()
         try:
             self.BANK_TRANSACTIONS[bank_name] = [transaction_name, int(value)]
         except ValueError:
             print("Failed to define income. Floating values only.")
 
     def add_bank(self, name, value):
+        name = name.strip().lower()
         try:
             self.BANKS[name] = int(value)
         except ValueError:
             print("Failed to define income. Floating values only.")
 
     def add_income(self, name, value):
+        name = name.strip().lower()
         try:
             self.INCOME[name] = int(value)
         except ValueError:
             print("Failed to define income. Floating values only.")
 
     def add_expenses(self, name, value):
+        name = name.strip().lower()
         try:
             self.EXPENSES[name] = int(value)
         except ValueError:
@@ -120,14 +125,6 @@ class GenerateDataset:
             new_record = {"source": k, "target": v[0], "value": v[1]}
             data.append(new_record)
 
-        data.append(
-            {
-                "source": "income",
-                "target": "excess funds",
-                "value": income_total - (expenses_total + savings_total),
-                "node_label": "excess funds",
-            }
-        )
         if self.existing_data:
             data += self.existing_data
 
