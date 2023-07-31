@@ -14,5 +14,10 @@ A simple Console app to visualize your cashflow
 ```
 > python main.py
 ```
+
+## Run
+![image](https://github.com/knowell41/sankey-gen/assets/45946492/21f838d9-4f2a-452f-9880-c95a1763e68b)
+
 ## Sample Visualization
-![cashflowviz-output](https://github.com/knowell41/cashflow-viz/assets/45946492/85d1b39f-d68c-4ce6-b22b-c16784330b41)
+
+![sample](https://github.com/knowell41/sankey-gen/assets/45946492/b8d483b6-5444-4797-bfa5-ab3d4e1fc154)
