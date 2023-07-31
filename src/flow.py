@@ -3,56 +3,34 @@ import plotly.graph_objects as go
 from sklearn.preprocessing import LabelEncoder
 import json
 import os
+from datetime import datetime
 
 
 class GenerateDataset:
-    INCOME = {}
-    SAVINGS = {}
-    EXPENSES = {}
-    BANKS = {}
-    BANK_TRANSACTIONS = {}
+    SOURCE = {}
+    FLOW = {}
     existing_data = {}
 
     def __init__(self) -> None:
         pass
 
-    def move_funds_from_bank(self, bank_name, transaction_name, value):
-        bank_name = bank_name.strip().lower()
-        transaction_name = transaction_name.strip().lower()
+    def add_flow(self, source_name, target_name, value):
+        source_name = source_name.strip().upper()
+        target_name = target_name.strip().upper()
         try:
-            self.BANK_TRANSACTIONS[bank_name] = [transaction_name, int(value)]
+            self.FLOW[source_name] = [target_name, int(value)]
         except ValueError:
-            print("Failed to define income. Floating values only.")
+            print("Failed to add flow. Floating/integer values only.e.g 1.00")
 
-    def add_bank(self, name, value):
-        name = name.strip().lower()
+    def add_source(self, source_name, value):
+        source_name = source_name.strip().upper()
         try:
-            self.BANKS[name] = int(value)
+            self.SOURCE[source_name] = int(value)
         except ValueError:
-            print("Failed to define income. Floating values only.")
-
-    def add_income(self, name, value):
-        name = name.strip().lower()
-        try:
-            self.INCOME[name] = int(value)
-        except ValueError:
-            print("Failed to define income. Floating values only.")
-
-    def add_expenses(self, name, value):
-        name = name.strip().lower()
-        try:
-            self.EXPENSES[name] = int(value)
-        except ValueError:
-            print("Failed to define income. Floating values only.")
-
-    def add_savings(self, name, value):
-        try:
-            self.SAVINGS[name] = int(value)
-        except ValueError:
-            print("Failed to define income. Floating values only.")
+            print("Failed to define source. Floating/integer values only. e.g 1.00 ")
 
     def open_existing_data(self):
-        file = os.path.join(os.getcwd(), "output.json")
+        file = os.path.join(os.getcwd(), "temp.json")
 
         with open(file, "r") as datafile:
             self.existing_data = json.load(datafile)
@@ -62,7 +40,12 @@ class GenerateDataset:
         categories = data["source"].unique().tolist() + ["none"]
         data = data.to_dict(orient="records")
 
-        with open("output.json", "w") as outfile:
+        now = datetime.now().strftime("%d%m%y-%H%M%S")
+        output_filename = f"output/{now}.json"
+        with open(output_filename, "w") as outfile:
+            json.dump(data, outfile)
+
+        with open("temp.json", "w") as outfile:
             json.dump(data, outfile)
 
         links = []
@@ -105,23 +88,12 @@ class GenerateDataset:
         income_total = 0
         expenses_total = 0
         savings_total = 0
-        for k, v in self.INCOME.items():
-            new_record = {"source": k, "target": "income", "value": v}
+        for k, v in self.SOURCE.items():
+            new_record = {"source": "principal", "target": k, "value": v}
             data.append(new_record)
             income_total += v
-        for k, v in self.EXPENSES.items():
-            new_record = {"source": "income", "target": k, "value": v}
-            data.append(new_record)
-            expenses_total += v
-        for k, v in self.SAVINGS.items():
-            new_record = {"source": "income", "target": k, "value": v}
-            data.append(new_record)
-            savings_total += v
-        for k, v in self.BANKS.items():
-            new_record = {"source": "income", "target": k, "value": v}
-            data.append(new_record)
 
-        for k, v in self.BANK_TRANSACTIONS.items():
+        for k, v in self.FLOW.items():
             new_record = {"source": k, "target": v[0], "value": v[1]}
             data.append(new_record)
 
@@ -138,5 +110,4 @@ class GenerateDataset:
                 {"source": name, "target": None, "value": 0, "node_label": None}
             )
         data_df = pd.DataFrame(data)
-        # print(data_df)
         self._display(data_df)

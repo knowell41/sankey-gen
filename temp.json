@@ -1,0 +1,166 @@
+[
+  {
+    "source": "GCASH",
+    "target": "PAGIBIG-MP2",
+    "value": 5000,
+    "node_label": "none"
+  },
+  {
+    "source": "GCASH",
+    "target": "CONTRIBUTIONS",
+    "value": 5000,
+    "node_label": "none"
+  },
+  {
+    "source": "GCASH",
+    "target": "MOLDEX REALTY",
+    "value": 14000,
+    "node_label": "none"
+  },
+  { "source": "PNB", "target": "GCASH", "value": 25000, "node_label": "none" },
+  {
+    "source": "CREDIT CARD",
+    "target": "GOOGLE WORKSPACE",
+    "value": 500,
+    "node_label": "none"
+  },
+  {
+    "source": "CREDIT CARD",
+    "target": "NETFLIX",
+    "value": 600,
+    "node_label": "none"
+  },
+  {
+    "source": "CREDIT CARD",
+    "target": "SUNLIFE",
+    "value": 6100,
+    "node_label": "none"
+  },
+  {
+    "source": "RCBC",
+    "target": "CREDIT CARD",
+    "value": 8000,
+    "node_label": "none"
+  },
+  {
+    "source": "RCBC",
+    "target": "INTERNET BILL",
+    "value": 1700,
+    "node_label": "none"
+  },
+  {
+    "source": "RCBC",
+    "target": "CAR LOAN",
+    "value": 14000,
+    "node_label": "none"
+  },
+  {
+    "source": "RCBC",
+    "target": "PRU-LIFE UK",
+    "value": 6250,
+    "node_label": "none"
+  },
+  {
+    "source": "RCBC",
+    "target": "TELECOM BILL",
+    "value": 600,
+    "node_label": "none"
+  },
+  { "source": "PNB", "target": "RCBC", "value": 40000, "node_label": "none" },
+  { "source": "BPI", "target": "PNB", "value": 77000, "node_label": "none" },
+  {
+    "source": "VSONA.AI",
+    "target": "RCBC",
+    "value": 88000,
+    "node_label": "none"
+  },
+  {
+    "source": "LEMONGRASS CONSULTING",
+    "target": "BPI",
+    "value": 77000,
+    "node_label": "none"
+  },
+  { "source": "UPWORK", "target": "PNB", "value": 55000, "node_label": "none" },
+  {
+    "source": "principal",
+    "target": "LEMONGRASS CONSULTING",
+    "value": 77000,
+    "node_label": "none"
+  },
+  {
+    "source": "principal",
+    "target": "UPWORK",
+    "value": 55000,
+    "node_label": "none"
+  },
+  {
+    "source": "principal",
+    "target": "VSONA.AI",
+    "value": 88000,
+    "node_label": "none"
+  },
+  {
+    "source": "LEMONGRASS CONSULTING",
+    "target": "none",
+    "value": 0,
+    "node_label": "none"
+  },
+  { "source": "UPWORK", "target": "none", "value": 0, "node_label": "none" },
+  { "source": "VSONA.AI", "target": "none", "value": 0, "node_label": "none" },
+  { "source": "none", "target": "none", "value": 0, "node_label": "none" },
+  { "source": "PNB", "target": "none", "value": 0, "node_label": "none" },
+  { "source": "RCBC", "target": "none", "value": 0, "node_label": "none" },
+  { "source": "BPI", "target": "none", "value": 0, "node_label": "none" },
+  {
+    "source": "TELECOM BILL",
+    "target": "none",
+    "value": 0,
+    "node_label": "none"
+  },
+  {
+    "source": "PRU-LIFE UK",
+    "target": "none",
+    "value": 0,
+    "node_label": "none"
+  },
+  { "source": "CAR LOAN", "target": "none", "value": 0, "node_label": "none" },
+  {
+    "source": "INTERNET BILL",
+    "target": "none",
+    "value": 0,
+    "node_label": "none"
+  },
+  {
+    "source": "CREDIT CARD",
+    "target": "none",
+    "value": 0,
+    "node_label": "none"
+  },
+  { "source": "SUNLIFE", "target": "none", "value": 0, "node_label": "none" },
+  { "source": "NETFLIX", "target": "none", "value": 0, "node_label": "none" },
+  {
+    "source": "GOOGLE WORKSPACE",
+    "target": "none",
+    "value": 0,
+    "node_label": "none"
+  },
+  { "source": "GCASH", "target": "none", "value": 0, "node_label": "none" },
+  {
+    "source": "MOLDEX REALTY",
+    "target": "none",
+    "value": 0,
+    "node_label": "none"
+  },
+  {
+    "source": "CONTRIBUTIONS",
+    "target": "none",
+    "value": 0,
+    "node_label": "none"
+  },
+  {
+    "source": "PAGIBIG-MP2",
+    "target": "none",
+    "value": 0,
+    "node_label": "none"
+  }
+]
